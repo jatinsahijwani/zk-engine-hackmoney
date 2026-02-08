@@ -1,4 +1,4 @@
-# zk-engine
+# proof-engine
 
 **Write Circom. Compile. Deploy. Verify — all in just one click, Powered by Ethereum**
 
@@ -21,7 +21,7 @@ A zero-setup toolkit to build, deploy, and verify ZK circuits using Circom — w
 Install in your project:
 
 ```bash
-npm install zk-engine
+npm install proof-engine
 ```
 
 ⚡ Usage
@@ -29,7 +29,7 @@ npm install zk-engine
 ### ✅ Compile Circom circuit
 
 ```bash
-npx zk-engine compile <path-to-your-circom-file>
+npx proof-engine compile <path-to-your-circom-file>
 ```
 
 This command:
@@ -42,7 +42,7 @@ This command:
 ### ✅ Test Compiled Circom Circuit
 
 ```bash
-npx zk-engine test <path-to-generated-folder> <path-to-input.json>
+npx proof-engine test <path-to-generated-folder> <path-to-input.json>
 ```
 
 This command:
@@ -56,7 +56,7 @@ This command:
 ### ✅ Deploy Compiled Circom Circuit
 
 ```bash
-npx zk-engine deploy <path-to-generated-folder> <PRIVATE_KEY_OF_WALLET>
+npx proof-engine deploy <path-to-generated-folder> <PRIVATE_KEY_OF_WALLET>
 ```
 
 This command:
@@ -70,7 +70,7 @@ This command:
 You can verify a proof directly using a single function call.
 
 ```js
-const { verifyProof } = require("zk-engine");
+const { verifyProof } = require("proof-engine");
 
 const result = await verifyProof({
   input: {
@@ -93,9 +93,9 @@ console.log(result ? "✅ Valid proof" : "❌ Invalid proof");
 
 | Command                                       | Description                                      |
 |----------------------------------------------|--------------------------------------------------|
-| `npx zk-engine compile <path-to-circuit>` | Compiles the `.circom` file and runs Groth16 setup |
-| `npx zk-engine test <output-folder> <path-to-input.json>` | Tests the Circom logic locally using ZK Proofs        |
-| `npx zk-engine deploy <output-folder> <private-key>` | Deploys the verifier contract to Ethereum Sepolia        |
+| `npx proof-engine compile <path-to-circuit>` | Compiles the `.circom` file and runs Groth16 setup |
+| `npx proof-engine test <output-folder> <path-to-input.json>` | Tests the Circom logic locally using ZK Proofs        |
+| `npx proof-engine deploy <output-folder> <private-key>` | Deploys the verifier contract to Ethereum Sepolia        |
 | `verifyProof(input,"<relative-path-to-output-folder>")` *(programmatic only)* | Generates proof and verifies it on-chain using deployed contract |
 
 
